@@ -199,12 +199,12 @@ abstract class _CustomLayoutStateBase<T extends _SubSwiper> extends State<T>
         ? details.velocity.pixelsPerSecond.dx
         : details.velocity.pixelsPerSecond.dy;
 
-    if (_animationController.value >= 0.75 || velocity > 500.0) {
+    if (_animationController.value >= 0.55) {
       if (_currentIndex <= 0 && !widget.loop) {
         return;
       }
       _move(1.0, nextIndex: _currentIndex - 1);
-    } else if (_animationController.value < 0.25 || velocity < -500.0) {
+    } else if (_animationController.value < 0.45) {
       if (_currentIndex >= widget.itemCount - 1 && !widget.loop) {
         return;
       }
